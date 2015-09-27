@@ -5,6 +5,14 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# Use Bootstrap
+gem 'bootstrap-sass'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-generators.git'
+gem 'haml-rails'
+gem 'simple_form'
+gem 'devise'
+gem 'html2haml'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
