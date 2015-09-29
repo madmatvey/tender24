@@ -7,7 +7,7 @@ gem 'rails', '4.2.4'
 #gem 'sqlite3'
 gem 'pg'
 # Use Bootstrap
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-generators.git'
 gem 'haml-rails'
@@ -15,7 +15,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'html2haml'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '>= 3.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

@@ -185,7 +185,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-generators!
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.5)
   byebug
   coffee-rails (~> 4.1.0)
   devise
@@ -195,7 +195,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.2.4)
-  sass-rails (~> 5.0)
+  sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
   simple_form
   spring
