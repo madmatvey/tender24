@@ -1,5 +1,6 @@
 class ProcurementsController < ApplicationController
   before_action :set_procurement, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:index]
 
   # GET /procurements
   # GET /procurements.json
@@ -24,17 +25,17 @@ class ProcurementsController < ApplicationController
   # POST /procurements
   # POST /procurements.json
   def create
-    @procurement = Procurement.new(procurement_params)
+     @procurement = Procurement.new(procurement_params)
 
-    respond_to do |format|
-      if @procurement.save
-        format.html { redirect_to @procurement, notice: 'Procurement was successfully created.' }
-        format.json { render :show, status: :created, location: @procurement }
-      else
-        format.html { render :new }
-        format.json { render json: @procurement.errors, status: :unprocessable_entity }
-      end
-    end
+     respond_to do |format|
+       if @procurement.save
+         format.html { redirect_to @procurement, notice: 'Procurement was successfully created.' }
+         format.json { render :show, status: :created, location: @procurement }
+       else
+         format.html { render :new }
+         format.json { render json: @procurement.errors, status: :unprocessable_entity }
+       end
+     end
   end
 
   # PATCH/PUT /procurements/1
