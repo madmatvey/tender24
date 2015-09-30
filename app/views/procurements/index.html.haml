@@ -1,7 +1,8 @@
 .page-header
-  = link_to new_procurement_path, class: 'btn btn-primary' do
-    %span.glyphicon.glyphicon-plus
-    New Procurement
+  - if user_signed_in? 
+    = link_to new_procurement_path, class: 'btn btn-primary' do
+      %span.glyphicon.glyphicon-plus
+      New Procurement
   %h1 Listing procurements
 
 .table-responsive
@@ -13,18 +14,18 @@
         %th Status
         %th Price
         %th Company
-        %th
-        %th
-        %th
+        - if user_signed_in?
+          %th Edit
+          %th Destroy
 
     %tbody
       - @procurements.each do |procurement|
         %tr
-          %td= procurement.name
+          %td= link_to procurement.name, procurement 
           %td= procurement.description
           %td= procurement.status
           %td= procurement.price
           %td= procurement.company_id
-          %td= link_to 'Show', procurement
-          %td= link_to 'Edit', edit_procurement_path(procurement)
-          %td= link_to 'Destroy', procurement, data: { confirm: 'Are you sure?' }, method: :delete
+          - if user_signed_in?
+            %td= link_to 'Edit', edit_procurement_path(procurement)
+            %td= link_to 'Destroy', procurement, data: { confirm: 'Are you sure?' }, method: :delete
