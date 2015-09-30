@@ -5,7 +5,7 @@ class ProcurementsController < ApplicationController
   # GET /procurements
   # GET /procurements.json
   def index
-    @procurements = Procurement.all
+    @procurements = Procurement.all.reverse
   end
 
   # GET /procurements/1
