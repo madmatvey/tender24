@@ -185,6 +185,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bootstrap-generators!
   bootstrap-sass (~> 3.3.5)
   byebug

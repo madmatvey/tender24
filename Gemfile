@@ -12,6 +12,7 @@ group :production do
 end
 # Use Bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'autoprefixer-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-generators.git'
 gem 'haml-rails'
