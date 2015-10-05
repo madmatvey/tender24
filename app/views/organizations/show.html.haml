@@ -1,0 +1,16 @@
+.page-header
+  = link_to organizations_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_organization_path(@organization), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show organization
+
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @organization.name
+  %dt Logo:
+  %dd= @organization.logo
+  %dt Details:
+  %dd= @organization.details_id
