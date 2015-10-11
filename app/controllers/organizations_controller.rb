@@ -1,11 +1,12 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :except => [:index,:show]
+  before_action :authenticate_user!
+  before_action :current_user_is_oranization_owner, only: [:edit, :update, :destroy]
 
   # GET /organizations
   # GET /organizations.json
   def index
-    @organizations = Organization.all
+    @organizations = Organization.where(user_id: current_user.id)
   end
 
   # GET /organizations/1
@@ -25,7 +26,7 @@ class OrganizationsController < ApplicationController
   # POST /organizations
   # POST /organizations.json
   def create
-    @organization = Organization.new(organization_params)
+    @organization = Organization.new(organization_params.merge(:user_id => current_user.id))
 
     respond_to do |format|
       if @organization.save
@@ -41,15 +42,19 @@ class OrganizationsController < ApplicationController
   # PATCH/PUT /organizations/1
   # PATCH/PUT /organizations/1.json
   def update
-    respond_to do |format|
-      if @organization.update(organization_params)
-        format.html { redirect_to @organization, notice: 'Organization was successfully updated.' }
-        format.json { render :show, status: :ok, location: @organization }
-      else
-        format.html { render :edit }
-        format.json { render json: @organization.errors, status: :unprocessable_entity }
+    # if current_user.id == organization_params.user_id
+      respond_to do |format|
+        if @organization.update(organization_params)
+          format.html { redirect_to @organization, notice: 'Organization was successfully updated.' }
+          format.json { render :show, status: :ok, location: @organization }
+        else
+          format.html { render :edit }
+          format.json { render json: @organization.errors, status: :unprocessable_entity }
+        end
       end
-    end
+    # else 
+      #format.html { render :edit }
+      #format.json { render json: @organization.errors, errors: 'You cant edit this organization' }
   end
 
   # DELETE /organizations/1
@@ -71,5 +76,9 @@ class OrganizationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def organization_params
       params.require(:organization).permit(:name, :logo, :details_id)
+
     end
+    def current_user_is_oranization_owner  
+      render text: "Access denied", status: 403 unless current_user.id == @organization.user_id
+    end   
 end

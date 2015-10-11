@@ -70,6 +70,6 @@ class ProcurementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def procurement_params
-      params.require(:procurement).permit(:name, :description, :status, :price, :company_id)
+      params.require(:procurement).permit(:name, :description, :status, :price, :organization_id)
     end
 end
