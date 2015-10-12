@@ -6,7 +6,10 @@ gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '2.13.1'
+  gem "rspec-rails"
+  gem "rspec"
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 group :production do
   gem 'pg'
@@ -14,10 +17,6 @@ group :production do
 end
 
 
-group :test do
-  gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.1.0'
-end
 # Use Bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'

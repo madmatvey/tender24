@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20151011145424) do
     t.integer  "details_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id",    null: false
+    t.integer  "user_id"
   end
 
   create_table "procurements", force: :cascade do |t|
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20151011145424) do
     t.integer  "company_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "organization_id", null: false
+    t.integer  "organization_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20151011145424) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "user_company_id"                      
+    t.integer  "user_company_id"
     t.string   "first_name"
     t.string   "last_name"
   end
