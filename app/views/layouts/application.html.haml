@@ -1,6 +1,10 @@
 !!!
 %html
   %head
+    %link{:href => "https://fonts.googleapis.com/css?family=Roboto:700,400&subset=cyrillic,latin,greek,vietnamese", :rel => "stylesheet"}/
+    %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/mobirise/css/style.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/mobirise/css/mbr-additional.css", :rel => "stylesheet", :type => "text/css"}/
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "utf-8"}/
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
@@ -60,3 +64,46 @@
             %span.sr-only Close
           = msg
       = yield
+    .navbar-fixed-bottom.row-fluid
+      .navbar-inner
+        %section#contacts1-0.mbr-section.mbr-section--relative.mbr-section--fixed-size{:style => "background-color: rgb(60, 60, 60);"}
+          .mbr-section__container.container
+            .mbr-contacts.mbr-contacts--wysiwyg.row
+              .col-sm-4
+                %img.mbr-contacts__img.mbr-contacts__img--left{:alt => "", :src => "/assets/images/24tender-logo387x114-141.png"}/
+              .col-sm-8
+                .row
+                  .col-sm-4
+                    %p.mbr-contacts__text
+                    %strong ADDRESS
+                    %br/
+                    443086 Moskovskoe shosse
+                    %br/
+                    4A build 2 Samara, of. 223
+                    %br/
+                    Russia: 8 (800) 775-62-17
+                    %br/
+                    %br/
+                    %br/
+                  .col-sm-4
+                    %p.mbr-contacts__text
+                    %strong CONTACTS
+                    %br/
+                    Email: support@24tender.ru
+                    %br>/
+                    Moscow: +7 (499) 322-06-77
+                    %br>/
+                    Almaty:  +7 (727) 237-98-01
+                    %br/
+                    %br/
+                  .col-sm-4
+                    %p.mbr-contacts__text
+                      %strong B2B PROCUREMENT PLATFORM
+                    %p.mbr-contacts__text
+                      %strong LLC 24TENDER Inc. 
+                    %ul.mbr-contacts__list
+                      %li BIN 1146311003695
+                      %li
+                      %br/
+                      %li
+                      %br/    
