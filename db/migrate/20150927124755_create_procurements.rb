@@ -5,7 +5,7 @@ class CreateProcurements < ActiveRecord::Migration
       t.text :description
       t.integer :status
       t.float :price
-      t.integer :company_id
+      t.integer :organization_id, null: false, default: 0
 
       t.timestamps null: false
     end
