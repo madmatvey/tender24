@@ -79,5 +79,6 @@ Rails.application.configure do
   # add bootstrap fonts
   config.assets.compile = true
   config.assets.precompile += %w( .svg .eot .woff .woff2 .ttf )
+  config.i18n.available_locales = :ru, :en
 
 end
