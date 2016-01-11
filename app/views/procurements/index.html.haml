@@ -2,30 +2,30 @@
   - if user_signed_in? 
     = link_to new_procurement_path, class: 'btn btn-primary' do
       %span.glyphicon.glyphicon-plus
-      New Procurement
-  %h1 Listing procurements
+      Создать закупку
+  %h1 Закупки
 
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
-        %th Name
-        %th Description
-        %th Status
-        %th Price
-        %th Company
+        %th Название потребности
+        %th Краткое описание
+        %th Статус
+        %th Бюджет
+        %th Заказчик
         - if user_signed_in?
-          %th Edit
-          %th Destroy
+          %th Редактировать
+          %th Удалить
 
     %tbody
       - @procurements.each do |procurement|
         %tr
           %td= link_to procurement.name, procurement 
-          %td= procurement.description
+          %td= link_to procurement.description, procurement
           %td= procurement.status
           %td= procurement.price
-          %td= procurement.company_id
+          %td= procurement.organization_id
           - if user_signed_in?
-            %td= link_to 'Edit', edit_procurement_path(procurement)
-            %td= link_to 'Destroy', procurement, data: { confirm: 'Are you sure?' }, method: :delete
+            %td= link_to 'Редактировать', edit_procurement_path(procurement)
+            %td= link_to 'Удалить', procurement, data: { confirm: 'Удалить закупку безвозвратно?' }, method: :delete

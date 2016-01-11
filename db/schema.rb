@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151011145424) do
+ActiveRecord::Schema.define(version: 20151004175525) do
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
     t.string   "logo"
     t.integer  "details_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
+    t.integer  "user_id",    default: 0, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "procurements", force: :cascade do |t|
@@ -27,10 +27,9 @@ ActiveRecord::Schema.define(version: 20151011145424) do
     t.text     "description"
     t.integer  "status"
     t.float    "price"
-    t.integer  "company_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "organization_id"
+    t.integer  "organization_id", default: 0, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,9 +45,6 @@ ActiveRecord::Schema.define(version: 20151011145424) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "user_company_id"
-    t.string   "first_name"
-    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
