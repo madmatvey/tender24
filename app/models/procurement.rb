@@ -1,4 +1,4 @@
 class Procurement < ActiveRecord::Base
 	belongs_to :organization
-	has_many :users through: :organization
+	has_many :users, through: :organization
 end
