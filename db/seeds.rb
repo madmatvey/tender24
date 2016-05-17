@@ -16,3 +16,19 @@
 ].each do |role|
   Role.find_or_create_by({name: role})
 end
+
+if User.count > 0
+  admin = User.find(1)
+else
+  admin = User.new(
+      :email                 => "admin@24tender.ru",
+      :password              => "24tender",
+      :password_confirmation => "24tender",
+      :first_name            => "EDIT! Admin Name",
+      :last_name             => "EDIT! Last Name"
+  )
+  # admin.skip_confirmation!
+
+end
+admin.role = Role.find_by_name('admin')
+admin.save!
