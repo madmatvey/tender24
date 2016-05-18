@@ -27,6 +27,9 @@ gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-gener
 gem 'haml-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'cancan'
+gem 'protector-cancan'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'html2haml'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 3.2'
@@ -67,4 +70,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

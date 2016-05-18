@@ -32,7 +32,7 @@
             %li
               %a{:href => "#contact"} Контакты
           %ul.nav.navbar-nav.navbar-right
-            - if user_signed_in?
+            -# - if user_signed_in?
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   %span.label=current_user.first_name+" "+current_user.last_name
@@ -47,7 +47,7 @@
                   %li.divider
                   %li
                     = link_to 'Logout', destroy_user_session_path, :method => :delete
-            -else
+            -# -else
               %li
                 = link_to 'Login', new_user_session_path
               %li
@@ -60,4 +60,6 @@
             %span{"aria-hidden" => "true"} ×
             %span.sr-only Close
           = msg
+      %p.notice= notice
+      %p.alert= alert
       = yield
