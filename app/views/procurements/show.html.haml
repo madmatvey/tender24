@@ -1,20 +1,14 @@
 .page-header
   = link_to procurements_path, class: 'btn btn-default' do
     %span.glyphicon.glyphicon-list-alt
-    Назад
+    Back
   = link_to edit_procurement_path(@procurement), class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
-    Редактировать
-  %h1 Потребность 
+    Edit
+  %h1 Show procurement
 
 %dl.dl-horizontal
-  %dt Название потребности 
+  %dt Name:
   %dd= @procurement.name
-  %dt Краткое описание:
-  %dd= @procurement.description
-  %dt Статус:
-  %dd= @procurement.status
-  %dt Бюджет:
-  %dd= @procurement.price
-  %dt Заказчик:
-  %dd= @procurement.organization_id
+  %dt Details:
+  %dd= @procurement.details
