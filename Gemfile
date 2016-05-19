@@ -18,6 +18,7 @@ end
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'test-unit'
 end
 # Use Bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
