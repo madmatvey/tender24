@@ -20,7 +20,7 @@ ActiveAdmin.register User do
             f.input :email
             f.input :password
             f.input :password_confirmation
-            f.input :role, as: :radio, collection: {None: "none", Administrator: "admin"}
+            f.input :role, as: :radio, collection: {Administrator: "admin", Operator: "operator", Registered: "registered", Banned: "banned"}
         end
         f.actions
     end

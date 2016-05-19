@@ -47,7 +47,7 @@
                     %a{:href => "#"} Something else here
                   %li.divider
                   %li
-                    = link_to 'Logout', destroy_user_session_path, :method => :delete
+                    = link_to 'Logout', destroy_user_session_path, :method => :get
             -else
               %li
                 = link_to 'Login', new_user_session_path
@@ -61,6 +61,6 @@
             %span{"aria-hidden" => "true"} ×
             %span.sr-only Close
           = msg
-      %p.notice= notice
-      %p.alert= alert
+      -# %p.notice= notice
+      -# %p.alert= alert
       = yield

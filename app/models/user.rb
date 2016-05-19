@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
 
   private
     def create_role
-      self.role = 'Registered'
+      self.role = 'registered'
     end
 end
